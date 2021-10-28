@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<script type="text/javascript">
+function focusevent()
+{
+document.getElementById("name").style.background="lavender";
+}
+function focusevent2()
+{
+document.getElementById("pass").style.background="lavender";
+}
+var login_attempts=3;
+function check_form()
+{
+var name=document.getElementById("name").value;
+var pass=document.getElementById("pass").value;
+if(name=="venue" && pass=="booking")
+{
+alert("SuccessFully Logged In you'll be directed to next page.");
+window.location ="pallaviplace.html";
+document.getElementById("name").value="";
+document.getElementById("pass").value="";
+}
+else
+{
+if(login_attempts==0)
+{
+alert("No Login Attempts Available");
+}
+else
+{
+login_attempts=login_attempts-1;
+alert("Login Failed Now Only "+login_attempts+" Login Attempts Available");
+if(login_attempts==0)
+{
+document.getElementById("name").disabled=true;
+document.getElementById("pass").disabled=true;
+document.getElementById("form1").disabled=true;
+}
+}
+}
+
+return false;
+}
+</script>
+
+
+
+
+<title>Venue Bookings-Login</title>
+
+<style>
+ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: #333;
+}
+
+
+
+
+
+li {
+float: left;
+}
+
+
+
+
+
+li a {
+display: block;
+color: white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+}
+
+
+
+
+
+li a:hover {
+background-color: #111;
+}
+</style>
+<style>
+.button5{
+border: none;
+color: white;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+}
+input[type=text], select {
+width: 60%;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+
+
+
+
+
+input[type=password], select {
+width: 60%;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+.sonu label{
+margin-left: 20px;
+}
+.slidecontainer {
+width: 100%;
+}
+
+
+
+
+
+.slider {
+-webkit-appearance: none;
+width: 50%;
+height: 15px;
+border-radius: 5px;
+background: #d3d3d3;
+outline: none;
+opacity: 0.7;
+-webkit-transition: .2s;
+transition: opacity .2s;
+}
+
+
+
+
+
+.slider:hover {
+opacity: 1;
+}
+
+
+
+
+
+.slider::-webkit-slider-thumb {
+-webkit-appearance: none;
+appearance: none;
+width: 25px;
+height: 25px;
+border-radius: 50%;
+background: #ff0055;
+cursor: pointer;
+}
+
+
+
+
+
+.slider::-moz-range-thumb {
+width: 25px;
+height: 25px;
+border-radius: 50%;
+background: #ff0055;
+cursor: pointer;
+}
+.container {
+display: block;
+position: relative;
+padding-left: 35px;
+margin-bottom: 12px;
+cursor: pointer;
+font-size: 22px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+
+</style>
+<style>
+body {
+background-color: #fff0f5;
+}
+</style>
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/navbar.css">
+<link rel="stylesheet" type="text/css" href="css/carosole.css">
+<link rel="stylesheet" type="text/css" href="css/allign.css">
+
+
+
+
+
+</head>
+<body>
+
+
+
+
+<div class="topnavb">
+<label class="logo">VENUE BOOKING</label>
+<ul>
+<li><a class="active" href="home.html">Home</a></li>
+
+
+
+<li><a href="registration.html">Registration</a></li>
+<li><a href="aboutus.html">About</a></li>
+</ul>
+<br>
+
+
+
+
+
+<center><h1>User Login</h1></center>
+<center>
+
+
+
+
+<div id="wrapper">
+
+
+
+<form id="form1" method="post"  action=""  onsubmit="return check_form();">
+<div class="sonu" style="background-color: #ebebeb;width: 500px;height:230px">
+<p id="login_label"> </p>
+  <br> <h2>Enter the Details</h2>
+<label for="name">Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+<input type="text" id="name" onfocus="focusevent()" placeholder="Enter Username">
+<br>
+
+ <label for="password">Password&nbsp;&nbsp;</label>
+<input type="password" id="pass" onfocus="focusevent2()" placeholder="Enter Password">
+<br>
+
+</div><br>
+
+
+
+<center><br><input type = "submit" class="button5" style="background-color: #ff0055;"  value = "Submit" /></center>
+
+
+
+
+
+</div>
+</form>
+
+
+
+
+
+
+</div>
+</center>
+
+
+
+
+
+</body>
+</html>

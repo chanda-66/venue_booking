@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Venue Bookings-Login </title>
+
+
+
+<style>
+ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: #333;
+}
+
+
+
+
+
+li {
+float: left;
+}
+
+
+
+
+
+li a {
+display: block;
+color: white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+}
+
+
+
+
+
+li a:hover {
+background-color: #111;
+}
+</style>
+<style>
+.button5{
+border: none;
+color: white;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+}
+input[type=text], select {
+width: 60%;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+
+
+
+
+
+input[type=password], select {
+width: 60%;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+.sonu label{
+margin-left: 20px;
+}
+.slidecontainer {
+width: 100%;
+}
+
+
+
+
+
+.slider {
+-webkit-appearance: none;
+width: 50%;
+height: 15px;
+border-radius: 5px;
+background: #d3d3d3;
+outline: none;
+opacity: 0.7;
+-webkit-transition: .2s;
+transition: opacity .2s;
+}
+
+
+
+
+
+.slider:hover {
+opacity: 1;
+}
+
+
+
+
+
+.slider::-webkit-slider-thumb {
+-webkit-appearance: none;
+appearance: none;
+width: 25px;
+height: 25px;
+border-radius: 50%;
+background: #ff0055;
+cursor: pointer;
+}
+
+
+
+
+
+.slider::-moz-range-thumb {
+width: 25px;
+height: 25px;
+border-radius: 50%;
+background: #ff0055;
+cursor: pointer;
+}
+.container {
+display: block;
+position: relative;
+padding-left: 35px;
+margin-bottom: 12px;
+cursor: pointer;
+font-size: 22px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+
+
+
+</style>
+<style>
+body {
+background-color: #fff0f5;
+}
+</style>
+
+
+
+</head>
+<script>
+function validateForm() {
+//collect form data in JavaScript variables
+var pw1 = document.getElementById("pswd1").value;
+var pw2 = document.getElementById("pswd2").value;
+var name1 = document.getElementById("fname").value;
+var name2 = document.getElementById("lname").value;
+
+
+//check empty first name field
+if(name1 == "") {
+document.getElementById("blankMsg").innerHTML = "<br/>**Fill the first name";
+return false;
+}
+
+//character data validation
+if(!isNaN(name1)){
+document.getElementById("blankMsg").innerHTML = "<br/>**Only characters are allowed";
+return false;
+}
+
+
+
+//character data validation
+if(!isNaN(name2)){
+document.getElementById("charMsg").innerHTML = "<br/>**Only characters are allowed";
+return false;
+}
+
+//check empty password field
+if(pw1 == "") {
+document.getElementById("message1").innerHTML = "<br/>**Fill the password please!";
+return false;
+}
+
+//check empty confirm password field
+if(pw2 == "") {
+document.getElementById("message2").innerHTML = "<br/>**Enter the password please!";
+return false;
+}
+
+//minimum password length validation
+if(pw1.length < 8) {
+document.getElementById("message1").innerHTML = "<br/>**Password length must be atleast 8 characters";
+return false;
+}
+
+
+
+//maximum length of password validation
+if(pw1.length > 15) {
+document.getElementById("message1").innerHTML = "<br/>**Password length must not exceed 15 characters";
+return false;
+}
+
+if(pw1 != pw2) {
+document.getElementById("message2").innerHTML = "<br/>**Passwords are not same";
+return false;
+} else {
+alert ("Your password created successfully");
+window.location ="userlogin.html";
+
+}
+}
+</script>
+
+
+
+<body>
+
+
+
+<label class="logo">VENUE BOOKING</label>
+<ul>
+<li><a href="home.html">Home</a></li>
+<li><a href="userlogin.html">Login</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contactus.html">Contact Us</a></li>
+</ul>
+<br>
+
+
+
+<center><h1 style="color:#ff0055">New User Registration</h1>
+
+
+
+<center>
+<div class="sonu" style="background-color: #e5e4e2;width: 750px;height:500px">
+<br/> <h2>Enter the Details</h2>
+
+<br/>
+
+<form action="userlogin.html" onsubmit ="return validateForm()">
+
+
+
+<!-- Enter first name -->
+<label for="Name"> Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+<input type = "text" id = "fname" value = "">
+<span id = "blankMsg" style="color:red"> </span> <br><br>
+
+
+
+<!-- Enter Email -->
+<label for="Email"> Email Id*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+<input type = "text" id = "lname" value = "">
+<span id = "charMsg" style="color:red"> </span> <br><br>
+
+
+
+<!-- Create a new phone no -->
+<label for="Phone No"> Phone No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+<input type = "text" id = "phone" value = ""> <br><br>
+
+
+
+
+<!-- Create a new password -->
+<label for="Password"> Password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+<input type = "password" id = "pswd1" value = "">
+<span id = "message1" style="color:red"> </span> <br><br>
+
+
+
+<!?Enter confirm password -->
+<label for="Confirm Password"> Confirm Password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+<input type = "password" id = "pswd2" value = "">
+<span id = "message2" style="color:red"> </span> <br><br>
+</div><br/>
+
+
+<!-- Click to verify valid password -->
+<input type = "submit" class="button5" style="background-color: #ed92bf;" value = "Submit">
+
+
+
+<!-- Click to reset fields -->
+<button type = "reset"class="button5" style="background-color: #ed92bf;"  value = "Reset" >Reset</button>
+
+</form>
+</center>
+</body>
+</html>
